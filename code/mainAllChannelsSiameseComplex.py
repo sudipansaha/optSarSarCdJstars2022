@@ -203,7 +203,7 @@ def test(dset):
                     xmax = s[0]
                 else:
                     xmax = steps0[ii + 1]
-                ymin = jj
+                ymin = steps1[jj]
                 if jj == dimWiseSlice - 1:
                     ymax = s[1]
                 else:
@@ -347,16 +347,16 @@ if __name__ == '__main__':
     
     ## After training, load the best model and test on it
     # train the network
-    print('We now proceed for test')
-    net.load_state_dict(torch.load(os.path.join(save_path, 'checkpoints', 'netBest.pth.tar')))
-    print('Best model loaded for testing')
-    netLossTest, netAccuracyTest, classAccuracyTest, prRecTest = test(testDataset)
+    ##print('We now proceed for test')
+    ##net.load_state_dict(torch.load(os.path.join(save_path, 'checkpoints', 'netBest.pth.tar')))
+    ##print('Best model loaded for testing')
+    ##netLossTest, netAccuracyTest, classAccuracyTest, prRecTest = test(testDataset)
     
-    print('Net accuracy on test data is: '+str(netAccuracyTest))    
+    ##print('Net accuracy on test data is: '+str(netAccuracyTest))    
 
-    print('Precision computed on test data is'+str(prRecTest[0]))
-    print('Recall computed on test data is'+str(prRecTest[1]))
-    print('F1 score computed on test data is'+str(prRecTest[2]))
+    ##print('Precision computed on test data is'+str(prRecTest[0]))
+    ##print('Recall computed on test data is'+str(prRecTest[1]))
+    ##print('F1 score computed on test data is'+str(prRecTest[2]))
 
 
 
